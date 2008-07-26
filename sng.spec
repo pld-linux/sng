@@ -10,7 +10,10 @@ Source0:	http://dl.sourceforge.net/sng/%{name}-%{version}.tar.gz
 # Source0-md5:	7bcbab5d60435da9aa106f3da926c049
 Patch0:		%{name}-buildfix.patch
 URL:		http://sng.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libpng >= 1.0.9
+BuildRequires:	libtool
 BuildRequires:	xorg-app-rgb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,6 +42,10 @@ pozwala bezstratnie konwertować pliki między formatami PNG a SNG.
 %patch0 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	--with-rgbtxt=%{_datadir}/X11/rgb.txt
 
