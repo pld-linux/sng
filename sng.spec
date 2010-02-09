@@ -12,7 +12,7 @@ Patch0:		%{name}-buildfix.patch
 URL:		http://sng.sourceforge.net/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	libpng >= 1.0.9
+BuildRequires:	libpng-devel >= 1.0.9
 BuildRequires:	libtool
 BuildRequires:	xorg-app-rgb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -30,8 +30,8 @@ translates between SNG and PNG.
 %description -l pl.UTF-8
 Minijęzyk SNG (Scriptable Network Graphics) jest tekstową
 reprezentacją plików PNG. Pliki SNG zawierają te same informacje co
-pliki PNG, mogą jednak być edytowane za pomocą zwykłego edytora
-tekstu lub innych narzędzi do obróbki plików tekstowych.
+pliki PNG, mogą jednak być edytowane za pomocą zwykłego edytora tekstu
+lub innych narzędzi do obróbki plików tekstowych.
 
 Pakiet SNG zawiera implementację kompilatora/dekompilatora który
 pozwala bezstratnie konwertować pliki między formatami PNG a SNG.
