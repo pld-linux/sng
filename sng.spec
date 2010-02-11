@@ -1,18 +1,18 @@
-#
 Summary:	Scriptable Network Graphics tool
 Summary(pl.UTF-8):	Narzędzie do obsługi formatu SNG
 Name:		sng
 Version:	1.0.2
-Release:	2
+Release:	3
 License:	distributable - libpng license
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/sng/%{name}-%{version}.tar.gz
 # Source0-md5:	7bcbab5d60435da9aa106f3da926c049
 Patch0:		%{name}-buildfix.patch
+Patch1:		%{name}-libpng.patch
 URL:		http://sng.sourceforge.net/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	libpng-devel >= 1.0.9
+BuildRequires:	libpng-devel >= 2:1.4.0
 BuildRequires:	libtool
 BuildRequires:	xorg-app-rgb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,8 +38,8 @@ pozwala bezstratnie konwertować pliki między formatami PNG a SNG.
 
 %prep
 %setup -q
-
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
