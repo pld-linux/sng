@@ -2,7 +2,7 @@ Summary:	Scriptable Network Graphics tool
 Summary(pl.UTF-8):	Narzędzie do obsługi formatu SNG
 Name:		sng
 Version:	1.0.5
-Release:	1
+Release:	2
 License:	distributable - libpng license
 Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/sng/%{name}-%{version}.tar.gz
