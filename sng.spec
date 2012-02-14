@@ -8,10 +8,11 @@ Group:		Applications/Graphics
 Source0:	http://downloads.sourceforge.net/sng/%{name}-%{version}.tar.gz
 # Source0-md5:	798502dcc90511d547549d9b3504b4af
 Patch0:		%{name}-libpng.patch
+Patch1:		%{name}-libpng14.patch
 URL:		http://sng.sourceforge.net/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	libpng-devel >= 2:1.4.0
+BuildRequires:	libpng14-devel
 BuildRequires:	libtool
 BuildRequires:	xorg-app-rgb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,6 +39,7 @@ pozwala bezstratnie konwertować pliki między formatami PNG a SNG.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
@@ -45,6 +47,7 @@ pozwala bezstratnie konwertować pliki między formatami PNG a SNG.
 %{__autoheader}
 %{__automake}
 %configure \
+	--with-png-inc=%{_includedir}/libpng14 \
 	--with-rgbtxt=%{_datadir}/X11/rgb.txt
 
 %{__make}
